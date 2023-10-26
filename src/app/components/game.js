@@ -1,7 +1,109 @@
 import Image from "next/image"
-import {Scissors,Rock,Paper,Spock,Lizard} from "./cards"
+import { Scissors, Rock, Paper, Spock, Lizard } from "./cards"
+import { useState, useEffect } from "react"
 
-export default function GameOn({again,picked}) {
+export default function GameOn({ again, picked,score }) {
+  const options = ["R", "P", "S", "Spock", "Liz"];
+  const [pcChoice, setPcChoice] = useState("");
+  const [result,setResult] =useState("")
+//useEffect is used so timeout function only runs once
+  useEffect(() => {
+    const myTimeout = setTimeout(() => {
+      computerPick();
+    }, 2000);
+    return () => {
+      clearTimeout(myTimeout);
+    };
+  }, []);
+  
+  function computerPick() {
+    console.log("whatapp")
+    const random = Math.floor((Math.random() * 5))
+    setPcChoice(options[random])
+    checkForWinner(options[random], picked)
+   }
+   
+   function checkForWinner(comp,person){
+    if(comp == "S"){
+      if(person == "Spock" || person == "R"){
+        //score ++
+        score()
+        setResult("You win!")
+        console.log("Human Win")
+      }else if(person == "Liz" || person == "P"){
+        //score nothing
+        setResult("You lose!")
+        console.log("Computer wins")
+      }else {
+        setResult("It's a draw!")
+        console.log("draw")}
+
+    } 
+    if(comp == "R"){
+      if(person == "P" || person == "Spock"){
+        //score ++
+        score()
+        setResult("You win!")
+        console.log("Human Win")
+      }else if(person == "Liz" || person == "S"){
+        //score nothing
+        setResult("You lose!")
+        console.log("Computer wins")
+      }else {
+        setResult("It's a draw!")
+        console.log("draw")}
+
+    }
+    if(comp == "P"){
+      if(person == "S" || person == "Liz"){
+        //score ++
+        score()
+        setResult("You win!")
+        console.log("Human Win")
+      }else if(person == "R" || person == "Spock"){
+        //score nothing
+        setResult("You lose!")
+        console.log("Computer wins")
+      }else {
+        setResult("It's a draw!")
+        console.log("draw")}
+
+    }
+    if(comp == "Liz"){
+      if(person == "S" || person == "R"){
+        //score ++
+        score()
+        setResult("You win!")
+        console.log("Human Win")
+      }else if(person == "Spock" || person == "P"){
+        //score nothing
+        setResult("You lose!")
+        console.log("Computer wins")
+      }else {
+        setResult("It's a draw!")
+        console.log("draw")}
+
+    }
+    if(comp == "Spock"){
+      if(person == "P" || person == "Liz"){
+        //score ++
+        score()
+        setResult("You win!")
+        console.log("Human Win")
+      }else if(person == "S" || person == "R"){
+        //score nothing
+        setResult("You lose!")
+        console.log("Computer wins")
+      }else {
+        setResult("It's a draw!")
+        console.log("draw")}
+
+    }
+     }
+
+
+
+
 
 
   return (
@@ -11,34 +113,31 @@ export default function GameOn({again,picked}) {
         <h3>House picked</h3>
       </section>
       <section className="flex w-full justify-evenly items-center">
-      <section>
-        
-       {picked == "S" && <Scissors/>}
-       {picked == "R" && <Rock/>}
-       {picked == "P" && <Paper/>}
-       {picked == "Spock" && <Spock/>}
-       {picked == "Liz" && <Lizard/>}
+        <section>
+
+          {picked == "S" && <Scissors />}
+          {picked == "R" && <Rock />}
+          {picked == "P" && <Paper />}
+          {picked == "Spock" && <Spock />}
+          {picked == "Liz" && <Lizard />}
 
 
-       
-      </section>
-      <section>
-        <h4>You lose</h4>
-        <button onClick={()=>again()}>Play again</button>
-      </section>
-      <section>
-
-        <section className="rounded-full bg-orange-400 w-40 h-40 flex items-center justify-center">
 
         </section>
-      </section>
+       {result.length>2 && <section>
+          <h4>{result}</h4>
+          <button onClick={() => again()}>Play again</button>
+        </section>}
+        <section>
+          {pcChoice == "S" && <Scissors />}
+          {pcChoice == "R" && <Rock />}
+          {pcChoice == "P" && <Paper />}
+          {pcChoice == "Spock" && <Spock />}
+          {pcChoice == "Liz" && <Lizard />}
+          {pcChoice == "" && <section className="rounded-full bg-orange-400 w-40 h-40 flex items-center justify-center" />}
+
+        </section>
       </section>
     </article>
   )
 }
-
-/* <section className="rounded-full bg-orange-400 w-52 h-52 flex items-center justify-center scissors">
-          <article className="w-36 h-36 rounded-full px-4 py-2 bg-white  border-t-8 border-gray-300 flex justify-center items-center">
-          <Image src="/images/icon-scissors.svg" height={75} width={75} />
-        </article>
-        </section>*/

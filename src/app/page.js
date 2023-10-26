@@ -13,6 +13,7 @@ export default function Home() {
     open: false,
     picked: ""
   })
+  const [score,setScore]= useState(0)
 
   function onPick(choice) {
     switch (choice) {
@@ -61,14 +62,14 @@ export default function Home() {
             Score
           </h3>
           <h2>
-            12
+            {score}
           </h2>
         </section>
       </header>
 
       {pick && <MainGame pick={onPick} />}
 
-      {result.open && <GameOn again={again} picked={result.picked} />}
+      {result.open && <GameOn again={again} picked={result.picked}  score={()=>{setScore(score + 1)}} />}
 
       {rules && <Rules exit={() => setRules(false)} />}
       <button className="absolute bottom-10 right-10 py-2 px-8 uppercase rounded-lg border-2px border-gray-200" onClick={() => setRules(true)}>Rules</button>
