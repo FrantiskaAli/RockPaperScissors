@@ -1,6 +1,7 @@
 'use client'
 import MainGame from "./components/choice";
 import Rules from "./components/rules";
+import GameOn from "./components/game";
 import { useState } from "react";
 
 
@@ -27,7 +28,7 @@ export default function Home() {
           </h2>
         </section>
       </header>
-      <MainGame />
+      <GameOn />
   {rules && <Rules exit={()=>setRules(false)}/>
   }
       <button className="absolute bottom-10 right-10 py-2 px-8 uppercase rounded-lg border-2px border-gray-200" onClick={()=>setRules(true)}>Rules</button>
