@@ -1,6 +1,7 @@
 import Image from "next/image"
+import {Scissors,Rock,Paper,Spock,Lizard} from "./cards"
 
-export default function GameOn() {
+export default function GameOn({again,picked}) {
 
 
   return (
@@ -11,16 +12,19 @@ export default function GameOn() {
       </section>
       <section className="flex w-full justify-evenly items-center">
       <section>
-        <section className="rounded-full bg-orange-400 w-52 h-52 flex items-center justify-center scissors">
-          <article className="w-36 h-36 rounded-full px-4 py-2 bg-white  border-t-8 border-gray-300 flex justify-center items-center">
-            <Image src="/images/icon-scissors.svg" height={75} width={75} />
-          </article>
-        </section>
+        
+       {picked == "S" && <Scissors/>}
+       {picked == "R" && <Rock/>}
+       {picked == "P" && <Paper/>}
+       {picked == "Spock" && <Spock/>}
+       {picked == "Liz" && <Lizard/>}
+
+
        
       </section>
       <section>
         <h4>You lose</h4>
-        <button>Play again</button>
+        <button onClick={()=>again()}>Play again</button>
       </section>
       <section>
 

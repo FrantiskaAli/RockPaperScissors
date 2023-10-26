@@ -1,12 +1,49 @@
 'use client'
-import MainGame from "./components/choice";
+import MainGame from "./components/pick";
 import Rules from "./components/rules";
 import GameOn from "./components/game";
 import { useState } from "react";
 
 
 export default function Home() {
-    const [rules, setRules] = useState(false)
+  //this set of code is states for when opening another part of the game view
+  const [rules, setRules] = useState(false)
+  const [pick, setPick] = useState(true);
+  const [result, setResult] = useState({
+    open: false,
+    picked: ""
+  })
+
+  function onPick(choice) {
+    switch (choice) {
+      case "R":
+        setResult({ ...result, open: true, picked: "R" })
+        setPick(false)
+        break;
+      case "P":
+        setResult({ ...result, open: true, picked: "P" })
+        setPick(false)
+        break;
+      case "S":
+        setResult({ ...result, open: true, picked: "S" })
+        setPick(false)
+        break;
+      case "Spock":
+        setResult({ ...result, open: true, picked: "Spock" })
+        setPick(false)
+        break;
+      case "Liz":
+        setResult({ ...result, open: true, picked: "Liz" })
+        setPick(false)
+        break;
+    }
+
+  }
+  function again() {
+    setResult({ ...result, open: false, picked: "" })
+    setPick(true)
+  }
+
 
 
   return (
@@ -28,10 +65,13 @@ export default function Home() {
           </h2>
         </section>
       </header>
-      <GameOn />
-  {rules && <Rules exit={()=>setRules(false)}/>
-  }
-      <button className="absolute bottom-10 right-10 py-2 px-8 uppercase rounded-lg border-2px border-gray-200" onClick={()=>setRules(true)}>Rules</button>
+
+      {pick && <MainGame pick={onPick} />}
+
+      {result.open && <GameOn again={again} picked={result.picked} />}
+
+      {rules && <Rules exit={() => setRules(false)} />}
+      <button className="absolute bottom-10 right-10 py-2 px-8 uppercase rounded-lg border-2px border-gray-200" onClick={() => setRules(true)}>Rules</button>
     </main>
   )
 
