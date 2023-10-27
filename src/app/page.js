@@ -61,7 +61,7 @@ export default function Home() {
           <h3 className="uppercase font-semibold tracking-wider">
             Score
           </h3>
-          <h2 className="text-6xl font-bold text-gray-600">
+          <h2 key={score} className={score > 0 ? "text-6xl font-bold text-gray-600 scorePoints":"text-6xl font-bold text-gray-600"}>
             {score}
           </h2>
         </section>
@@ -69,7 +69,7 @@ export default function Home() {
 
       {pick && <MainGame pick={onPick} />}
 
-      {result.open && <GameOn again={again} picked={result.picked}  score={()=>{setScore(score + 1)}} />}
+      {result.open && <GameOn again={again} picked={result.picked}  scorePlus={()=>{setScore(score + 1)}} scoreMinus={()=>{score > 0 ? setScore(score - 1) :setScore(0)}} />}
 
       {rules && <Rules exit={() => setRules(false)} />}
       <button className="absolute bottom-10 right-10 py-2 px-8 uppercase rounded-lg ring-2 ring-gray-400 text-white font-semibold" onClick={() => setRules(true)}>Rules</button>

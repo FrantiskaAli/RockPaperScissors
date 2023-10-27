@@ -2,7 +2,7 @@ import Image from "next/image"
 import { Scissors, Rock, Paper, Spock, Lizard } from "./cards"
 import { useState, useEffect } from "react"
 
-export default function GameOn({ again, picked, score }) {
+export default function GameOn({ again, picked, scorePlus, scoreMinus }) {
   const options = ["R", "P", "S", "Spock", "Liz"];
   const [pcChoice, setPcChoice] = useState("");
   const [result, setResult] = useState("")
@@ -27,11 +27,12 @@ export default function GameOn({ again, picked, score }) {
     if (comp == "S") {
       if (person == "Spock" || person == "R") {
         //score ++
-        score()
+        scorePlus()
         setResult("You win!")
         console.log("Human Win")
       } else if (person == "Liz" || person == "P") {
-        //score nothing
+        //score--
+        scoreMinus()
         setResult("You lose!")
         console.log("Computer wins")
       } else {
@@ -43,11 +44,12 @@ export default function GameOn({ again, picked, score }) {
     if (comp == "R") {
       if (person == "P" || person == "Spock") {
         //score ++
-        score()
+        scorePlus()
         setResult("You win!")
         console.log("Human Win")
       } else if (person == "Liz" || person == "S") {
-        //score nothing
+        //score--
+        scoreMinus()
         setResult("You lose!")
         console.log("Computer wins")
       } else {
@@ -59,11 +61,12 @@ export default function GameOn({ again, picked, score }) {
     if (comp == "P") {
       if (person == "S" || person == "Liz") {
         //score ++
-        score()
+        scorePlus()
         setResult("You win!")
         console.log("Human Win")
       } else if (person == "R" || person == "Spock") {
-        //score nothing
+        //score --
+        scoreMinus()
         setResult("You lose!")
         console.log("Computer wins")
       } else {
@@ -75,11 +78,12 @@ export default function GameOn({ again, picked, score }) {
     if (comp == "Liz") {
       if (person == "S" || person == "R") {
         //score ++
-        score()
+        scorePlus()
         setResult("You win!")
         console.log("Human Win")
       } else if (person == "Spock" || person == "P") {
         //score nothing
+        scoreMinus()
         setResult("You lose!")
         console.log("Computer wins")
       } else {
@@ -91,11 +95,12 @@ export default function GameOn({ again, picked, score }) {
     if (comp == "Spock") {
       if (person == "P" || person == "Liz") {
         //score ++
-        score()
+        scorePlus()
         setResult("You win!")
         console.log("Human Win")
       } else if (person == "S" || person == "R") {
-        //score nothing
+        //score --
+        scoreMinus()
         setResult("You lose!")
         console.log("Computer wins")
       } else {

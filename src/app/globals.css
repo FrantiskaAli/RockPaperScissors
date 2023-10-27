@@ -40,7 +40,9 @@ box-shadow: 0px 7px 0px 0px #148d97;
 
 
 }
-
+.scorePoints{
+  animation: result 1s ease-out;
+}
 .winner{
   animation: winner 1s linear 1s;
   z-index: 1;
