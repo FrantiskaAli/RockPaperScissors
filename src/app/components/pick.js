@@ -10,35 +10,35 @@ export default function MainGame({pick}) {
       <section className="col-start-2 col-span-2 flex justify-center items-center h-fit">
         <section className="rounded-full bg-orange-400 w-40 h-40 flex items-center justify-center scissors">
           <article onClick={()=>pick("S")} className="w-32 h-32 rounded-full px-4 py-2 bg-white  border-t-8 border-gray-300 flex justify-center items-center">
-            <Image src="/images/icon-scissors.svg" height={75} width={75} />
+            <Image src="/images/icon-scissors.svg" height={75} width={75} als="scissors"/>
           </article>
         </section>
       </section>
       <section className="rounded-full   col-start-1 col-span-1 flex justify-center items-center h-fit">
-        <section className="rounded-full bg-orange-400 w-40 h-40 flex items-center justify-center spock">
+        <section className="rounded-full bg-teal-400 w-40 h-40 flex items-center justify-center spock">
           <article onClick={()=>pick("Spock")}  className="w-32 h-32 rounded-full px-4 py-2 bg-white  border-t-8 border-gray-300 flex justify-center items-center">
-            <Image src="/images/icon-spock.svg" height={75} width={75} />
+            <Image src="/images/icon-spock.svg" height={75} width={75} alt="spock"/>
           </article>
         </section>
       </section>
       <section className="rounded-full   col-start-4 col-span-1 flex justify-center items-center h-fit">
-        <section className="rounded-full bg-orange-400 w-40 h-40 flex items-center justify-center paper">
+        <section className="rounded-full bg-blue-500 w-40 h-40 flex items-center justify-center paper">
           <article onClick={()=>pick("P")}  className="w-32 h-32 rounded-full px-4 py-2 bg-white  border-t-8 border-gray-300 flex justify-center items-center">
-            <Image src="/images/icon-paper.svg" height={75 } width={75} />
+            <Image src="/images/icon-paper.svg" height={75 } width={75} alt="paper" />
           </article>
         </section>
       </section>
       <section className="rounded-full   col-start-1  col-span-2 flex justify-center items-center h-fit ">
-        <section className="rounded-full bg-orange-400 w-40 h-40 flex items-center justify-center lizard">
+        <section className="rounded-full bg-purple-500 w-40 h-40 flex items-center justify-center lizard">
           <article onClick={()=>pick("Liz")}  className="w-32 h-32 rounded-full px-4 py-2 bg-white  border-t-8 border-gray-300 flex justify-center items-center">
-            <Image src="/images/icon-lizard.svg" height={75} width={75} />
+            <Image src="/images/icon-lizard.svg" height={75} width={75} alt="Lizard" />
           </article>
         </section>
       </section>
       <section className="rounded-full   col-start-3 col-span-2 flex justify-center items-center h-fit">
-        <section className="rounded-full bg-orange-400 w-40 h-40 flex items-center justify-center rock">
+        <section className="rounded-full bg-red-500 w-40 h-40 flex items-center justify-center rock">
           <article onClick={()=>pick("R")}  className="w-32 h-32 rounded-full px-4 py-2 bg-white  border-t-8 border-gray-300 flex justify-center items-center">
-            <Image src="/images/icon-rock.svg" height={75} width={75} />
+            <Image src="/images/icon-rock.svg" height={75} width={75} alt="rock" />
           </article>
         </section>
       </section>
