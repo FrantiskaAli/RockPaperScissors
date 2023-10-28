@@ -1,44 +1,44 @@
 import Image from "next/image";
 
 
-export default function MainGame({pick}) {
+export default function MainGame({pick, imgSize}) {
 
   return (
 
-    <article className="grid grid-cols-4 h-2/3 w-2/4 mt-12 relative choice">
+    <article className="grid grid-cols-4 sm:h-2/3 h-1/2  md:w-2/4 w-screen mt-12 relative choice overflow-scroll">
      
       <section className="col-start-2 col-span-2 flex justify-center items-center h-fit">
-        <section className="rounded-full bg-orange-400 w-40 h-40 flex items-center justify-center scissors transform hover:scale-110 ease-in-out cursor-pointer">
-          <article onClick={()=>pick("S")} className="w-32 h-32 rounded-full px-4 py-2 bg-white  border-t-8 border-gray-300 flex justify-center items-center">
-            <Image src="/images/icon-scissors.svg" height={75} width={75} als="scissors"/>
+        <section className="rounded-full bg-orange-400 lg:w-40 lg:h-40 sm:w-28 sm:h-28 w-20 h-20 flex items-center justify-center scissors transform hover:scale-110 ease-in-out cursor-pointer">
+          <article onClick={()=>pick("S")} className="lg:w-32 lg:h-32 sm:w-26 sm:h-26 w-16 h-16 rounded-full px-4 py-2 bg-white  border-t-8 border-gray-300 flex justify-center items-center">
+            <Image src="/images/icon-scissors.svg" height={imgSize} width={imgSize} als="scissors"/>
           </article>
         </section>
       </section>
-      <section className="rounded-full   col-start-1 col-span-1 flex justify-center items-center h-fit">
-        <section className="rounded-full bg-teal-400 w-40 h-40 flex items-center justify-center spock transform hover:scale-110 ease-in-out cursor-pointer">
-          <article onClick={()=>pick("Spock")}  className="w-32 h-32 rounded-full px-4 py-2 bg-white  border-t-8 border-gray-300 flex justify-center items-center">
-            <Image src="/images/icon-spock.svg" height={75} width={75} alt="spock"/>
+      <section className="rounded-full   col-start-1 sm:col-span-1 sm:col-start-1 col-span-2 flex justify-center items-center h-fit">
+        <section className="rounded-full bg-teal-400 lg:w-40 lg:h-40 sm:w-28 sm:h-28 w-20 h-20  flex items-center justify-center spock transform hover:scale-110 ease-in-out cursor-pointer">
+          <article onClick={()=>pick("Spock")}  className="lg:w-32 lg:h-32 sm:w-26 sm:h-26 w-16 h-16 rounded-full px-4 py-2 bg-white  border-t-8 border-gray-300 flex justify-center items-center">
+            <Image src="/images/icon-spock.svg" height={imgSize} width={imgSize} alt="spock"/>
           </article>
         </section>
       </section>
-      <section className="rounded-full   col-start-4 col-span-1 flex justify-center items-center h-fit">
-        <section className="rounded-full bg-blue-500 w-40 h-40 flex items-center justify-center paper transform hover:scale-110 ease-in-out cursor-pointer">
-          <article onClick={()=>pick("P")}  className="w-32 h-32 rounded-full px-4 py-2 bg-white  border-t-8 border-gray-300 flex justify-center items-center">
-            <Image src="/images/icon-paper.svg" height={75 } width={75} alt="paper" />
+      <section className="rounded-full   sm:col-start-4  sm:col-span-1 col-span-2 flex justify-center items-center h-fit">
+        <section className="rounded-full bg-blue-500 lg:w-40 lg:h-40 sm:w-28 sm:h-28 w-20 h-20  flex items-center justify-center paper transform hover:scale-110 ease-in-out cursor-pointer">
+          <article onClick={()=>pick("P")}  className="lg:w-32 lg:h-32 sm:w-26 sm:h-26 w-16 h-16 rounded-full px-4 py-2 bg-white  border-t-8 border-gray-300 flex justify-center items-center">
+            <Image src="/images/icon-paper.svg" height={imgSize} width={imgSize} alt="paper" />
           </article>
         </section>
       </section>
-      <section className="rounded-full   col-start-1  col-span-2 flex justify-center items-center h-fit ">
-        <section className="rounded-full bg-purple-500 w-40 h-40 flex items-center justify-center lizard transform hover:scale-110 ease-in-out cursor-pointer">
-          <article onClick={()=>pick("Liz")}  className="w-32 h-32 rounded-full px-4 py-2 bg-white  border-t-8 border-gray-300 flex justify-center items-center">
-            <Image src="/images/icon-lizard.svg" height={75} width={75} alt="Lizard" />
+      <section className="rounded-full   sm:col-start-1 col-start-2 col-span-1 sm:col-span-2 flex justify-center items-center h-fit ">
+        <section className="rounded-full bg-purple-500 lg:w-40 lg:h-40 sm:w-28 sm:h-28 w-20 h-20  flex items-center justify-center lizard transform hover:scale-110 ease-in-out cursor-pointer">
+          <article onClick={()=>pick("Liz")}  className="lg:w-32 lg:h-32 sm:w-26 sm:h-26 w-16 h-16 rounded-full px-4 py-2 bg-white  border-t-8 border-gray-300 flex justify-center items-center">
+            <Image src="/images/icon-lizard.svg" height={imgSize} width={imgSize} alt="Lizard" />
           </article>
         </section>
       </section>
-      <section className="rounded-full   col-start-3 col-span-2 flex justify-center items-center h-fit">
-        <section className="rounded-full bg-red-500 w-40 h-40 flex items-center justify-center rock transform hover:scale-110 ease-in-out cursor-pointer">
-          <article onClick={()=>pick("R")}  className="w-32 h-32 rounded-full px-4 py-2 bg-white  border-t-8 border-gray-300 flex justify-center items-center">
-            <Image src="/images/icon-rock.svg" height={75} width={75} alt="rock" />
+      <section className="rounded-full   sm:col-start-3 col-start-3 col-span-1 sm:col-span-2 flex justify-center items-center h-fit">
+        <section className="rounded-full bg-red-500 lg:w-40 lg:h-40 sm:w-28 sm:h-28 w-20 h-20  flex items-center justify-center rock transform hover:scale-110 ease-in-out cursor-pointer">
+          <article onClick={()=>pick("R")}  className="lg:w-32 lg:h-32 sm:w-26 sm:h-26 w-16 h-16  rounded-full px-4 py-2 bg-white  border-t-8 border-gray-300 flex justify-center items-center">
+            <Image src="/images/icon-rock.svg" height={imgSize} width={imgSize} alt="rock" />
           </article>
         </section>
       </section>

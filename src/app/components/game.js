@@ -119,11 +119,11 @@ export default function GameOn({ again, picked, scorePlus, scoreMinus }) {
   return (
     <article className="flex flex-col w-2/3 h-1/2 items-center justify-evenly">
       <section className="flex w-full justify-between px-20">
-        <h3 className="text-white text-xl uppercase font-semibold">You picked</h3>
-        <h3 className="text-white text-xl uppercase font-semibold">House picked</h3>
+        <h3 className="text-white text-xl uppercase font-semibold  sm:flex hidden">You picked</h3>
+        <h3 className="text-white text-xl uppercase font-semibold sm:flex hidden">House picked</h3>
       </section>
       <section className="flex w-full justify-evenly items-center">
-        <section className="relative">
+        <section className="relative bg-blue-950 rounded-full">
 
 
           {picked == "S" && <Scissors />}
@@ -147,7 +147,7 @@ export default function GameOn({ again, picked, scorePlus, scoreMinus }) {
           <h4 className="text-4xl uppercase font-bold text-white tracking-tight mb-4">{result}</h4>
           <button onClick={() => again()} className="w-full bg-white rounded-xl py-2 uppercase font-semibold text-blue-900 shadow-md shadow-black" >Play again</button>
         </section>
-        <section className="relative">
+        <section className="relative rounded-full bg-blue-950">
           {pcChoice == "S" && <Scissors />}
           {pcChoice == "R" && <Rock />}
           {pcChoice == "P" && <Paper />}

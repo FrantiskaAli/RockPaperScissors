@@ -2,96 +2,129 @@
 @tailwind components;
 @tailwind utilities;
 
-main{
+main {
   background: #27456C;
-background: -moz-radial-gradient(top, #27456C 0%, #141539 100%);
-background: -webkit-radial-gradient(top, #27456C 0%, #141539 100%);
-background: radial-gradient(ellipse at top, #27456C 0%, #141539 100%);
+  background: -moz-radial-gradient(top, #27456C 0%, #141539 100%);
+  background: -webkit-radial-gradient(top, #27456C 0%, #141539 100%);
+  background: radial-gradient(ellipse at top, #27456C 0%, #141539 100%);
 
 }
 
-.choice{
+.choice {
   background-image: url("../../public/images/bg-pentagon.svg");
   background-size: 80% 80%;
   background-position: center;
   background-repeat: no-repeat;
 
 }
-.scissors{
-  -webkit-box-shadow: 0px 9px 0px 0px #C67D18; 
-box-shadow: 0px 7px 0px 0px #C67D18;
+
+.scissors {
+  -webkit-box-shadow: 0px 9px 0px 0px #C67D18;
+  box-shadow: 0px 7px 0px 0px #C67D18;
 }
-.rock{
-  -webkit-box-shadow: 0px 9px 0px 0px #c61818; 
-box-shadow: 0px 7px 0px 0px #c61818;
+
+.rock {
+  -webkit-box-shadow: 0px 9px 0px 0px #c61818;
+  box-shadow: 0px 7px 0px 0px #c61818;
 
 }
-.paper{
-  -webkit-box-shadow: 0px 9px 0px 0px #4232d2; 
-box-shadow: 0px 7px 0px 0px #4232d2;
+
+.paper {
+  -webkit-box-shadow: 0px 9px 0px 0px #4232d2;
+  box-shadow: 0px 7px 0px 0px #4232d2;
 }
-.lizard{
-  -webkit-box-shadow: 0px 9px 0px 0px #53157e; 
-box-shadow: 0px 7px 0px 0px #53157e;
+
+.lizard {
+  -webkit-box-shadow: 0px 9px 0px 0px #53157e;
+  box-shadow: 0px 7px 0px 0px #53157e;
 }
-.spock{
-  -webkit-box-shadow: 0px 9px 0px 0px #148d97; 
-box-shadow: 0px 7px 0px 0px #148d97;
+
+.spock {
+  -webkit-box-shadow: 0px 9px 0px 0px #148d97;
+  box-shadow: 0px 7px 0px 0px #148d97;
 
 
 }
-.scorePoints{
+
+.scorePoints {
   animation: result 1s ease-out;
 }
-.winner{
+
+.winner {
   animation: winner 1s linear 1s;
   z-index: 1;
 }
-.cardInGame{
+
+.cardInGame {
   animation: tokenIn 1s ease-in;
 }
-.resultAnn{
+
+.resultAnn {
   animation: result 4s ease-out;
 }
 
-@keyframes winner{
-  30%{
+@keyframes winner {
+  30% {
     transform: scale(2);
     opacity: .50;
     background-color: white;
   }
-  60%{
-    transform:scale(2.5);
+
+  60% {
+    transform: scale(2.5);
     opacity: .25;
   }
-  90%{
-    transform:scale(3);
-    opacity:.10;
+
+  90% {
+    transform: scale(3);
+    opacity: .10;
   }
-  100%{
-    transform:scale(3.5);
+
+  100% {
+    transform: scale(3.5);
     opacity: 0;
   }
 }
 
-@keyframes tokenIn{
-  0%{
-    opacity:0;
+@keyframes tokenIn {
+  0% {
+    opacity: 0;
     transform: scale(2);
   }
-  100%{
-    opacity:1;
-    transform:scale(1)
+
+  100% {
+    opacity: 1;
+    transform: scale(1)
   }
 }
-@keyframes result{
-  0%{
-    opacity:0;
+
+@keyframes result {
+  0% {
+    opacity: 0;
   }
-  50%{
-    opacity:0
+
+  50% {
+    opacity: 0
   }
-  100%{
-    opacity:1
+
+  100% {
+    opacity: 1
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .choice {
+
+    background-size: 70% 70%;
+
+
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .choice {
+
+    background-size: 60% 70%;
+
   }
 }
