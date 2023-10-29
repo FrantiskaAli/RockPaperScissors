@@ -40,7 +40,7 @@ useEffect(()=>{
 
 
 
-
+//saving chosen option for the next step
 
   function onPick(choice) {
     switch (choice) {
@@ -78,17 +78,17 @@ useEffect(()=>{
     <main className="w-screen h-screen flex flex-col items-center">
       <header className="w-2/3 h-fit flex justify-between items-center mt-6 ring-2 ring-gray-400 rounded-xl  p-2 sm:p-6">
         <section className="w-1/4 uppercase font-bold leading-none">
-          <h2 className="leading-none text-sm sm:text-xl sm:leading-none text-white">Rock <br />
+          <h2 className="leading-none text-sm sm:text-xl sm:leading-none text-white font-all">Rock <br />
             Paper<br />
             Scissors <br />
             Lizard<br />
             Spock</h2>
         </section>
         <section className="p-2 text-center sm:w-32  bg-white rounded-xl flex flex-col justify-around sm:justify-start">
-          <h3 className="uppercase font-semibold sm:tracking-wider ">
+          <h3 className="uppercase font-semibold sm:tracking-wider font-all">
             Score
           </h3>
-          <h2 key={score} className={score > 0 ? "sm:text-6xl text-4xl font-bold text-gray-600 scorePoints":"sm:text-6xl text-4xl font-bold text-gray-600"}>
+          <h2 key={score} className={score > 0 ? "sm:text-6xl text-4xl font-bold text-gray-600 scorePoints font-all":"sm:text-6xl text-4xl font-bold text-gray-600 font-all"}>
             {score}
           </h2>
         </section>

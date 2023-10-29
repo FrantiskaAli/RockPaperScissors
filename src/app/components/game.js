@@ -3,10 +3,11 @@ import { Scissors, Rock, Paper, Spock, Lizard } from "./cards"
 import { useState, useEffect } from "react"
 
 export default function GameOn({ again, picked, scorePlus, scoreMinus }) {
+  //states
   const options = ["R", "P", "S", "Spock", "Liz"];
   const [pcChoice, setPcChoice] = useState("");
   const [result, setResult] = useState("")
-  //useEffect is used so timeout function only runs once
+  //useEffect is used so timeout function only runs once,so computer picks slightly later then player
   useEffect(() => {
     const myTimeout = setTimeout(() => {
       computerPick();
@@ -15,14 +16,14 @@ export default function GameOn({ again, picked, scorePlus, scoreMinus }) {
       clearTimeout(myTimeout);
     };
   }, []);
-
+//function to pick random option
   function computerPick() {
     console.log("whatapp")
     const random = Math.floor((Math.random() * 5))
     setPcChoice(options[random])
     checkForWinner(options[random], picked)
   }
-
+//function to compare playr and comt and decide winner
   function checkForWinner(comp, person) {
     if (comp == "S") {
       if (person == "Spock" || person == "R") {
@@ -119,11 +120,11 @@ export default function GameOn({ again, picked, scorePlus, scoreMinus }) {
   return (
     <article className="flex flex-col w-2/3 h-1/2 items-center justify-evenly">
       <section className="flex w-full justify-between px-20">
-        <h3 className="text-white text-xl uppercase font-semibold  sm:flex hidden">You picked</h3>
-        <h3 className="text-white text-xl uppercase font-semibold sm:flex hidden">House picked</h3>
+        <h3 className="text-white text-xl uppercase font-semibold  sm:flex hidden font-all">You picked</h3>
+        <h3 className="text-white text-xl uppercase font-semibold sm:flex hidden font-all">House picked</h3>
       </section>
-      <section className="flex w-full justify-evenly items-center">
-        <section className="relative bg-blue-950 rounded-full">
+      <section className="grid grid-cols-2 gap-10 md:grid-cols-3 justify-items-center w-full justify-evenly items-center">
+        <section className="w-fit relative  bg-blue-950 rounded-full">
 
 
           {picked == "S" && <Scissors />}
@@ -143,17 +144,17 @@ export default function GameOn({ again, picked, scorePlus, scoreMinus }) {
             </article>
           }
         </section>
-         <section className="resultAnn">
-          <h4 className="text-4xl uppercase font-bold text-white tracking-tight mb-4">{result}</h4>
-          <button onClick={() => again()} className="w-full bg-white rounded-xl py-2 uppercase font-semibold text-blue-900 shadow-md shadow-black" >Play again</button>
+         <section className="resultAnn row-start-2 col-span-2 md:row-auto md:col-span-1">
+          <h4 className="text-4xl uppercase font-bold text-white tracking-tight mb-4 font-all">{result}</h4>
+          <button onClick={() => again()} className="w-full bg-white rounded-xl py-2 uppercase font-semibold font-all text-blue-900 shadow-md shadow-black transform hover:scale-110 ease-in-out" >Play again</button>
         </section>
-        <section className="relative rounded-full bg-blue-950">
+        <section className="relative w-fit rounded-full bg-blue-950">
           {pcChoice == "S" && <Scissors />}
           {pcChoice == "R" && <Rock />}
           {pcChoice == "P" && <Paper />}
           {pcChoice == "Spock" && <Spock />}
           {pcChoice == "Liz" && <Lizard />}
-          {pcChoice == "" && <section className="rounded-full bg-black/[.3] w-40 h-40 flex items-center justify-center" />}
+          {pcChoice == "" && <section className="rounded-full bg-black/[.3] lg:w-40 lg:h-40 sm:w-28 sm:h-28 w-20 h-20 flex items-center justify-center" />}
           {result == "You lose!" &&
             <article className="absolute top-0 w-full h-full  winner rounded-full ">
 

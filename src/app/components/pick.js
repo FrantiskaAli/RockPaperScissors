@@ -8,9 +8,9 @@ export default function MainGame({pick, imgSize}) {
     <article className="grid grid-cols-4 sm:h-2/3 h-1/2  md:w-2/4 w-screen mt-12 relative choice overflow-scroll">
      
       <section className="col-start-2 col-span-2 flex justify-center items-center h-fit">
-        <section className="rounded-full bg-orange-400 lg:w-40 lg:h-40 sm:w-28 sm:h-28 w-20 h-20 flex items-center justify-center scissors transform hover:scale-110 ease-in-out cursor-pointer">
+        <section className="rounded-full bg-orange-400 lg:w-40 lg:h-40 sm:w-28 sm:h-28 w-20 h-20 flex items-center justify-center scissors transform hover:scale-110 ease-in-out cursor-pointer mt-10">
           <article onClick={()=>pick("S")} className="lg:w-32 lg:h-32 sm:w-26 sm:h-26 w-16 h-16 rounded-full px-4 py-2 bg-white  border-t-8 border-gray-300 flex justify-center items-center">
-            <Image src="/images/icon-scissors.svg" height={imgSize} width={imgSize} als="scissors"/>
+            <Image src="/images/icon-scissors.svg" height={imgSize} width={imgSize} alt="scissors"/>
           </article>
         </section>
       </section>

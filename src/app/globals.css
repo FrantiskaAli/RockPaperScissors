@@ -1,7 +1,15 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
+@font-face {
+  font-family: "font";
+  src: url("../../public/images/font/BarlowSemiCondensed-SemiBold.ttf");
+}
 main {
   background: #27456C;
   background: -moz-radial-gradient(top, #27456C 0%, #141539 100%);
@@ -9,7 +17,7 @@ main {
   background: radial-gradient(ellipse at top, #27456C 0%, #141539 100%);
 
 }
-
+/*background pentagon*/
 .choice {
   background-image: url("../../public/images/bg-pentagon.svg");
   background-size: 80% 80%;
@@ -17,35 +25,41 @@ main {
   background-repeat: no-repeat;
 
 }
-
+/*shadows to create button like look*/
 .scissors {
   -webkit-box-shadow: 0px 9px 0px 0px #C67D18;
   box-shadow: 0px 7px 0px 0px #C67D18;
 }
-
 .rock {
   -webkit-box-shadow: 0px 9px 0px 0px #c61818;
   box-shadow: 0px 7px 0px 0px #c61818;
-
 }
-
 .paper {
   -webkit-box-shadow: 0px 9px 0px 0px #4232d2;
   box-shadow: 0px 7px 0px 0px #4232d2;
 }
-
 .lizard {
   -webkit-box-shadow: 0px 9px 0px 0px #53157e;
   box-shadow: 0px 7px 0px 0px #53157e;
 }
-
 .spock {
   -webkit-box-shadow: 0px 9px 0px 0px #148d97;
   box-shadow: 0px 7px 0px 0px #148d97;
 
 
 }
+*::-webkit-scrollbar {
+  display: none;
+}
 
+/* Hide scrollbar for IE, Edge and Firefox */
+*{
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+
+}
+
+/*animations*/
 .scorePoints {
   animation: result 1s ease-out;
 }
