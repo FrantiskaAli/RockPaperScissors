@@ -146,7 +146,7 @@ export default function GameOn({ again, picked, scorePlus, scoreMinus }) {
         </section>
          <section className="resultAnn row-start-2 col-span-2 md:row-auto md:col-span-1">
           <h4 className="text-4xl uppercase font-bold text-white tracking-tight mb-4 font-all">{result}</h4>
-          <button onClick={() => again()} className="w-full bg-white rounded-xl py-2 uppercase font-semibold font-all text-blue-900 shadow-md shadow-black transform hover:scale-110 ease-in-out" >Play again</button>
+          <button onClick={()=>again()} className="w-full bg-white rounded-xl py-2 uppercase font-semibold font-all text-blue-900 shadow-md shadow-black transform hover:scale-110 ease-in-out" >Play again</button>
         </section>
         <section className="relative w-fit rounded-full bg-blue-950">
           {pcChoice == "S" && <Scissors />}

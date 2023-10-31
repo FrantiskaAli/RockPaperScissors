@@ -5,7 +5,7 @@ export default function MainGame({pick, imgSize}) {
 
   return (
 
-    <article className="grid grid-cols-4 sm:h-2/3 h-1/2  md:w-2/4 w-screen mt-12 relative choice overflow-scroll">
+    <article className="grid grid-cols-4 sm:h-2/3 h-1/2  md:w-2/4 w-screen  relative choice ">
      
       <section className="col-start-2 col-span-2 flex justify-center items-center h-fit">
         <section className="rounded-full bg-orange-400 lg:w-40 lg:h-40 sm:w-28 sm:h-28 w-20 h-20 flex items-center justify-center scissors transform hover:scale-110 ease-in-out cursor-pointer mt-10">

@@ -1,34 +1,30 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# React Portfolio [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-First, run the development server:
+## Table of content
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [License](#License)
+- [Author](#Author)
+## Description
+Rock, paper, scissor, lizard, spock fun browser tapping game.
+ [HERE](https://rock-paper-scissors-lac-seven.vercel.app/) You can find my deployed application!
+## Screenshots
+![screenshot1](./public/Screenshot.png) 
+![screenshot2](./public/Screenshot2.png) 
+### While working on this app I learned
+- Practiced writing next.js applications
+- Bettered my tailwind abilities
+- Practiced writing @keyframes for animations
+- Practiced game logic making
+## Installation
+No need to install when seen in the browser. In local computer npm install needed
+## Usage
+Play the game by picking your turn and see if you beat the computer. The score adds when you win but careful, when you lose you will loose point too .
+## License
+GNU General Public License v3.0 is used on this project.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Author
+You can check ou my profiles <br/> [Front-end Mentor](mailto:tiskarechk@gmail.com). </br>
+[Github Profile](https://github.com/FrantiskaAli)

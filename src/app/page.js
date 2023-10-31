@@ -38,8 +38,9 @@ useEffect(()=>{
     }
 },[width])
 
-
-
+useEffect(()=>{
+  if(typeof window !== undefined){  setScore(localStorage.getItem("score"))}
+},[])
 //saving chosen option for the next step
 
   function onPick(choice) {
@@ -70,6 +71,8 @@ useEffect(()=>{
   function again() {
     setResult({ ...result, open: false, picked: "" })
     setPick(true)
+    if(typeof window !== undefined){localStorage.setItem("score", score)}
+  
   }
 
 
