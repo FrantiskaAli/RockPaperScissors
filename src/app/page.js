@@ -39,7 +39,7 @@ useEffect(()=>{
 },[width])
 
 useEffect(()=>{
-  if(typeof window !== undefined){  setScore(localStorage.getItem("score"))}
+  if(typeof window !== undefined){ localStorage.getItem("score")? setScore(localStorage.getItem("score")) :setScore(0)}
 },[])
 //saving chosen option for the next step
 
